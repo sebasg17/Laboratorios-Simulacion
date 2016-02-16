@@ -1,0 +1,24 @@
+def randMs(semilla, cantidad):
+        num = []
+        xn = semilla
+        for i in range(cantidad):
+
+            n = str(xn**2)
+            xn = str(xn)
+
+            if len(n)==2*len(xn):
+                y1=(len(xn)/2)
+                y2=y1+len(xn)
+                u=n[y1:y2]
+            else:            
+                y1=(len(xn)/2)-1
+                y2=y1+len(xn)
+                u = n[y1:y2]
+
+            if u == '':
+                u += '0'
+
+            xn = int(u)
+            u = '0,'+u
+            num.append(u)
+        return num
